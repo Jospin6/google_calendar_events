@@ -12,6 +12,9 @@ gem 'dotenv-rails'
 gem 'tailwindcss-rails', '~> 2.6'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
