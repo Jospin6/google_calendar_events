@@ -94,6 +94,11 @@ GEM
       dotenv (= 3.1.2)
       railties (>= 6.1)
     erubi (1.13.0)
+    factory_bot (6.5.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.4.3)
+      factory_bot (~> 6.4)
+      railties (>= 5.0.0)
     font-awesome-rails (4.7.0.8)
       railties (>= 3.2, < 8.0)
     globalid (1.2.1)
@@ -250,6 +255,7 @@ DEPENDENCIES
   capybara
   debug
   dotenv-rails
+  factory_bot_rails
   font-awesome-rails (~> 4.7, >= 4.7.0.8)
   importmap-rails
   jbuilder
