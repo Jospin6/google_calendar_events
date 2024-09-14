@@ -8,9 +8,8 @@
         </p>
         <div class="text-center">
             <p class="text-[16px]">You can create as many as events you want</p>
-            <button class="rounded-lg m-auto py-[2px] px-[10px] bg-yelow-800 text-white">
-                Create your event
-            </button>
+            <%= link_to "Create your event", new_event_path, 
+                class: "rounded-lg m-auto py-[2px] px-[10px] bg-yelow-800 text-white" %>
         </div>
     </div>
 </div>
