@@ -12,17 +12,14 @@
 
   <div id="events" class="grid grid-cols-8 gap-4">
     <% @events.each do |event| %>
-      <div class="col-span-2 shadow rounded-lg mb-4 p-2">
+      <div class="col-span-2 shadow rounded-lg mb-4 p-2 border-[1px] border-[#121212]">
         <h3><%= event.title %></h3>
         <p><span class="font-[500]">Start Time: </span><%= formatted_datetime(event.start_date) %></p>
         <p><span class="font-[500]">End Time: </span><%= formatted_datetime(event.end_date) %></p>
-        <button class="w-full h-[35px] rounded-lg bg-yellow-900 text-white mt-4">Details</button>
+        <%= link_to "Show this event", 
+          event, 
+          class: "rounded-lg bg-blue-500 font-medium" %>
       </div>
-
-      <%= render event %>
-      <p>
-        <%= link_to "Show this event", event, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
     <% end %>
   </div>
 </div>
