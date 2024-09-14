@@ -1,9 +1,13 @@
 class Event < ApplicationRecord
+  include GoogleCalendarApi
+  CALENDAR_ID = 'primary'
   belongs_to :user
   has_rich_text :description
   after_create :publish_event_to_gcal
   after_update :update_event_on_gcal
   before_destroy :remove_event_from_gcal
+
+  validates :title, :description, :venue, :start_date, :end_date, presence: true
   
   def email_guest_list
     return if self.guest_list.nil?
