@@ -13,12 +13,23 @@
 
   <body>
     <main>
-      <div class="w-full h-[50px] bg-yellow-800 text-white text-[16px] flex items-center px-6">
-        <span>Google Calendar Events</span>
+      <div class="w-full h-[50px] bg-yellow-800 text-white text-[16px] flex justify-between items-center px-6">
+        <span>Google Calendar Events</span>        
+        <% if user_signed_in? %>
+          <span class="text-white text-[12px]"><%= current_user.email %></span>
+        <% else %>
+          <% unless current_page?(new_session_path) || current_page?(new_registration_path) %>
+            <%= link_to 'Sign In', 
+              new_user_session_path, 
+              class: "bg-blue-400 text-white py-[2px] px-[10px] rounded-lg shadow" %>
+          <% end %>
+        <% end %>
       </div>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <%= yield %>
+      <div class="px-[20%]">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
     </main>
   </body>
 </html>
