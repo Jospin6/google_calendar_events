@@ -23,6 +23,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
 
       ## Omniauthable
       t.string :google_id
+      t.string :access_token
+      t.integer :expires_at
+      t.string :refresh_token
 
       ## Confirmable
       # t.string   :confirmation_token

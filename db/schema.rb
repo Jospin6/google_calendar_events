@@ -26,6 +26,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_14_071339) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.string "google_id"
+    t.string "access_token"
+    t.integer "expires_at"
+    t.string "refresh_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
