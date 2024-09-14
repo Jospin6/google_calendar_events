@@ -10,6 +10,8 @@ class User < ApplicationRecord
           :omniauthable, 
           omniauth_providers:  %i[ google_oauth2 ]
 
+  has_many :events
+
   def self.from_omniauth(auth)
     user = User.where(google_id: auth.try(:uid) || auth["uid"]).first
     if user
