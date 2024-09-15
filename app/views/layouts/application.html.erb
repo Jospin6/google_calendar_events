@@ -18,11 +18,9 @@
         <% if user_signed_in? %>
           <span class="text-white text-[12px]"><%= current_user.email %></span>
         <% else %>
-          <% unless current_page?(new_session_path) || current_page?(new_registration_path) %>
-            <%= link_to 'Sign In', 
+          <%= link_to 'Sign In', 
               new_user_session_path, 
               class: "bg-blue-400 text-white py-[2px] px-[10px] rounded-lg shadow" %>
-          <% end %>
         <% end %>
       </div>
       <div class="px-[20%]">

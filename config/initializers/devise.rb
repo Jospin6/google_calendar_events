@@ -271,15 +271,16 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], 
-    ENV['GOOGLE_CLIENT_SECRET'], {
-      callback_url: ENV['CALLBACK_URL'],
+  config.omniauth :google_oauth2, 
+    ENV['GOOGLE_CLIENT_ID'], 
+    ENV['GOOGLE_CLIENT_SECRET'], 
+    {
+      redirect_uri: ENV['CALLBACK_URL'],
       access_type: "offline",
       prompt: "consent",
-      select_account: true,
-      scope: 'userinfo.email,calendar'
+      scope: 'userinfo.email, calendar',
+      state: SecureRandom.hex(24)
     }
-
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

@@ -187,6 +187,9 @@ GEM
     omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
       omniauth (~> 2.0)
+    omniauth-rails_csrf_protection (1.0.2)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     orm_adapter (0.5.0)
     pg (1.5.8-x64-mingw-ucrt)
     psych (5.1.2)
@@ -323,6 +326,7 @@ DEPENDENCIES
   jbuilder
   omniauth
   omniauth-google-oauth2
+  omniauth-rails_csrf_protection
   pg
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.4)
