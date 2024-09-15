@@ -7,7 +7,7 @@ class Event < ApplicationRecord
   after_update :update_event_on_gcal
   before_destroy :remove_event_from_gcal
 
-  validates :title, :description, :venue, :start_date, :end_date, presence: true
+  validates :title, :description, :venue, :start_time, :end_time, presence: true
   validate :validate_event_dates
   
   def email_guest_list
@@ -17,10 +17,10 @@ class Event < ApplicationRecord
   end
 
   def validate_event_dates
-    return if start_date.nil? || end_date.nil?
+    return if start_time.nil? || end_time.nil?
     
-    if start_date > end_date
-      errors.add(:start_date, 'must be less than end date')
+    if start_time > end_time
+      errors.add(:start_time, 'must be less than end date')
     end
   end
 
