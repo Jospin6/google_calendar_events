@@ -18,7 +18,9 @@
   
   <div class="mt-4">
     <%= form.label :title %>
-    <%= form.text_field :title, class: "block focus:outline-none focus:ring-0 border-none 
+    <%= form.text_field :title, 
+      placeholder: "Title (ex: family meeting)",
+      class: "block focus:outline-none focus:ring-0 border-none 
         outline-none text-3xl font-bold py-2 mt-2 w-full" %>
   </div>
 
@@ -29,13 +31,17 @@
 
   <div class="mt-4">
     <%= form.label :venue %>
-    <%= form.text_field :venue, class: "block focus:outline-none focus:ring-0 border-none 
+    <%= form.text_field :venue, 
+      placeholder: "Venue",
+      class: "block focus:outline-none focus:ring-0 border-none 
         outline-none text-3xl font-bold py-2 mt-2 w-full" %>
   </div>
 
   <div class="mt-4">
     <%= form.label :guest_list %>
-    <%= form.text_field :guest_list, class: "block focus:outline-none focus:ring-0 border-none 
+    <%= form.text_field :guest_list, 
+      placeholder: "Guest list (ex: example@gmail.com, guest@gmail.com)",
+      class: "block focus:outline-none focus:ring-0 border-none 
         outline-none text-3xl font-bold py-2 mt-2 w-full"%>
   </div>
 

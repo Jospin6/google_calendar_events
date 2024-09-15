@@ -8,6 +8,7 @@ class Event < ApplicationRecord
   before_destroy :remove_event_from_gcal
 
   validates :title, :description, :venue, :start_date, :end_date, presence: true
+  validate :validate_event_dates
   
   def email_guest_list
     return if self.guest_list.nil?
