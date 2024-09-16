@@ -11,9 +11,7 @@ class Event < ApplicationRecord
   validate :validate_event_dates
   
   def email_guest_list
-    return if self.guest_list.nil?
-    
-    guest_list.split(", ")
+    guest_list.present? ? guest_list.split(', ') : [] 
   end
 
   def validate_event_dates
