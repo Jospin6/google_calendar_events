@@ -1,49 +1,55 @@
 # Google calendar events
 ##  This project is a google calenar built with Ruby on Rails.
-### The application allows users to plane and schedule events.
 <hr />
 
+### Introduction
 
-## Built With
+This app integrate google calendar with rails, users can create events in the app and send them to their google calendar.
 
-- Ruby
-- Ruby on Rails
-- Tailwindcss
+You will find following items in this app
+
+* Tailwindcss for design
+* Devise implemented where user can signin in using their gmail accounts
+* Google Calendar API
+
+
+## Development Setup
+
+Prerequisites:
+
 - PostgreSQL
-- RSpec
-- Capybara
-- Render
+- Bundler
+- Ruby(3.2.2)
+- Rails 7
 
-## Getting Started
+```sh
+bundle install
+```
+And to setup the database you can run these commands
 
-Here are the steps to follow in order to get this project on your local computer.
+```sh
+rails db:create
+rails data:migrate
+```
+Now you are all set. Run following command on your terminal:
 
-### Prerequisites
+```sh
+rails server 
+```
 
-`Ruby 3.2.2`
+open browser at: [http://localhost:3000](http://localhost:3000).
 
-`Rails 7`
+## Envorinment Variables
 
-### Setup
+For managing google client id and secret keys I have used the dot-env gem and if you use the same, then create a .env file in your progect and add it to .gitignore file.
 
-clone this repo by typing `git clone`
+And create these variables in it:
 
-### Install
-
-install the dependacies by typing `bundle install`
-
-### Usage
-
-start the local server by running `rails server`
-
-### Deployment
-
-this project is deployed on Render
-
-
-### Testing
-
-this project uses RSpec and Capybara for testing 
+```
+GOOGLE_CLIENT_ID
+GOOGLE_CLIENT_SECRET
+CALLBACK_URL
+```
 
 ## Authors
 
